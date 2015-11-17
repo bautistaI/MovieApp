@@ -1,0 +1,51 @@
+<!-- ========= leaderboard template -->
+<template name="leaderboard">
+	Hello World! I am the leaderboard template, everything you see here
+	is inside template name="leaderboard"
+	<p>Today is: <b>{{whatDayisToday}}</b></p> <!-- {{whatDayisToday}} is a method from the Template.leaderboard.helpers}} -->
+	<hr>
+	<h3>
+		Number of current players: 
+		<span>{{playerCount}}</span> <!-- {{playerCount}} is a method from the Template.leaderboard.helpers}} -->
+	</h3>
+	<div class="clearfix">
+		<!-- to understand the #if the buttons only show if a player has been selected -->
+		{{#if showSelectedPlayer}}
+			<button type="button" class="btn btn-primary increment"><span class="glyphicon glyphicon-thumbs-up"></span> Give 5 points</button>
+			<button type="button" class="btn btn-danger decrement"><span class="glyphicon glyphicon-thumbs-down"></span> Take 5 points</button>
+		{{/if}}
+	</div>
+	<hr>
+	<div>
+		<ul class="list-group">
+				{{#each player}} <!-- for each player in players from the Mongo collection -->
+					<li class="list-group-item player {{selectedClass}} {{highScorePlayer}}"> <!-- {{selectedClass}} {{highScorePlayer}} are methods from the Template.leaderboard.helpers -->
+						{{name}} {{score}} <!-- name and score are the data inside our DB besides the unique ID which is created by MongoDB -->
+
+						{{#if highScorePlayer}}<!-- If the score is higher or equal to 30 I'm showing this star, the logic is inside the helper function -->
+							<span class="glyphicon glyphicon-star"></span>
+						{{/if}} 
+					</li>
+				{{/each}}
+
+				<!-- show how data that is not part of the players collection (DB) displays events had no effect on this list item -->
+				<li class="list-group-item">not a player collection can't touch me!</li>
+
+				{{#if showSelectedPlayer}}<!-- let's make sure the template doesn't try to show a player unless is actually selected -->
+					<li class="list-group-item selected-player">
+						Selected Player: {{showSelectedPlayer.name}} <!-- this shows the name of the selected player's name | notice the dot notacion to get only the name  -->
+					</li>
+				{{/if}}	
+		</ul>
+	</div>
+	<hr>
+	* Scores Above 30 <span class="glyphicon glyphicon-star"></span>
+</template>
+<!-- =============================== -->
+
+
+
+
+
+
+
