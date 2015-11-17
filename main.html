@@ -1,0 +1,56 @@
+<head>
+  <title>MovieApp</title>
+</head>
+
+<body>
+  <div class="container text-center logo">
+    {{> logo}}
+  </div>
+  <div class="container movies-list" id="main">
+    <h2>What movie are you looking for?</h2>
+    <form class="form-inline search-movie">
+      <div class="form-group">
+        <input class="form-control" type="text" name="query" id="search" size="50" placeholder="(e.g. Fight Club, Starwars)">
+        <input class="btn btn-primary" type="submit" value="Search">
+      </div>
+    </form>
+
+    <button class="btn btn-success now-showing">Now Showing</button>
+      
+
+    {{#if searching}}
+      <p>Searching...</p>
+    {{else}}
+      <hr>
+      {{#each movies}}
+    <div class="movies">
+        {{> movie}}
+    </div>
+      {{/each}}
+    {{/if}}
+  </div>
+</body>
+
+<template name="movie">
+    <div class="col-sm-6 col-md-3">
+      <div class="thumbnail">
+        {{#if poster}}
+          <img src="http://image.tmdb.org/t/p/w500{{poster}}">
+          <!-- <a href="http://api.themoviedb.org/3/movie/{{key}}/videos" target="_blank">trailer</a> -->
+        {{else}}
+          <img src="http://lorempixel.com/500/281">
+        {{/if}} 
+        <div class="caption">
+          <div class="movie-info">
+            <h3 class="title text-center">{{title}}</h3>
+            <p class="text-center">Release date: {{releaseDate}}</p>
+          </div>
+          <p>{{overview}}</p>
+        </div>
+      </div>
+    </div>
+</template>
+
+<template name="logo">
+  <img src="images/logo.jpg" alt="logo" width="150" height="147" class="logo">
+</template>
