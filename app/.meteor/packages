@@ -12,7 +12,6 @@ kadira:debug
 twbs:bootstrap
 msavin:mongol
 accounts-ui
-accounts-twitter
 http
 underscore
 gliese:masonry-desandro
@@ -30,3 +29,5 @@ random
 ejson
 spacebars
 check
+kadira:flow-router
+accounts-password

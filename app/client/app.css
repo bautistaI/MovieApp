@@ -1,17 +1,36 @@
 body{
 	margin: 20px;
 }
-.container.movies-list{
-	background: #F1F1EE;
-	padding: 10px;
-	border: 1px solid #ddd;
-	border-radius: 4px;
-	overflow: hidden;
-	display: block;
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 .logo{
-	border-radius: 10px;
-	margin-bottom: 20px;
+	border-radius: 4px;
+}
+.now-showing{
+	margin-top: 6px;
+	margin-left: 2em;
+	padding: 7px 40px;
+}
+#login-buttons{
+	border: 1px solid #ddd;
+	padding: 10px;
+	border-radius: 3px;
+	float: right;
+	margin-top: 6px;
+	margin-right: 4em;
+}
+#login-buttons a, .accounts-dialog a{
+	color: #000;
+}
+#login-dropdown-list{
+	top: 34 !important;
+	left: -100px !important;
+}
+.navbar-brand{
+	padding: 5px 13px !important;
 }
 .movie-info{
 	background: #ccc;
@@ -28,15 +47,6 @@ body{
 .thumbnail .caption{
 	padding: 0;
 }
-
-/* ---------------- */
-
-#wrapper {
-	width: 70%;
-	max-width: 1100px;
-	min-width: 800px;
-	margin: 50px auto;
-}
 .thumbnail {
 	display: inline-block;
 	background: -webkit-linear-gradient(45deg, #ddd, #FFF);
@@ -46,7 +56,7 @@ body{
 	padding: 15px;
 	padding-bottom: 5px;
 }
-@media (max-width: 3000px) {
+/*@media (max-width: 3000px) {
     #main{
         min-width: 1640px!important;
     }
@@ -55,5 +65,5 @@ body{
     #main{
         min-width: 1240px!important;
     }
-}
+}*/
 

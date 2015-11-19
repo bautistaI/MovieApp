@@ -3,23 +3,37 @@
 </head>
 
 <body>
-  <div class="container text-center logo">
-    {{> logo}}
-  </div>
-  <div class="container movies-list" id="main">
+  {{> NavBar}}
+  {{> MovieLayout}}
+</body>
+
+
+<template name="NavBar">
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="">
+          <img alt="Brand" src="images/logo.jpg" width="40" height="40" class="logo">
+        </a>
+      </div>
+       <button class="btn btn-success now-showing">Now Showing</button>
+        {{> loginButtons}}
+    </div>
+  </nav>
+</template>
+
+
+<template name="MovieLayout">
+  <div class="container-fluid" id="main">
     <h2>What movie are you looking for?</h2>
     <form class="form-inline search-movie">
       <div class="form-group">
         <input class="form-control" type="text" name="query" id="search" size="50" placeholder="(e.g. Fight Club, Starwars)">
         <input class="btn btn-primary" type="submit" value="Search">
       </div>
-    </form>
-
-    <button class="btn btn-success now-showing">Now Showing</button>
-      
-
+    </form>    
     {{#if searching}}
-      <p>Searching...</p>
+      {{> loading}}
     {{else}}
       <hr>
       {{#each movies}}
@@ -29,7 +43,8 @@
       {{/each}}
     {{/if}}
   </div>
-</body>
+</template>
+
 
 <template name="movie">
     <div class="col-sm-6 col-md-3">
@@ -51,6 +66,11 @@
     </div>
 </template>
 
-<template name="logo">
-  <img src="images/logo.jpg" alt="logo" width="150" height="147" class="logo">
+
+<template name="loading">
+  <div class="container text-center">
+    <div class="row">
+      <img src="images/ajax-loader.gif" alt="loading">
+    </div>
+  </div>
 </template>
