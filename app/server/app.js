@@ -8,6 +8,7 @@ Meteor.publish('movieSearch', function(query){
 		var apiUrl = 'http://api.themoviedb.org/3/search/movie?api_key=' + MovieDB_api_key + '&query=' + query;
 		// var apiUrl = 'http://api.rottentomatoes.com/api/public/v1.0/movies.json?apikey=' + RottenTomatoes_API_KEY + '&query=' + query;
 		var response = HTTP.get(apiUrl).data;
+		// console.log(response);
 
 		// this is using the movieDB api:
 		_.each(response.results, function(result){
