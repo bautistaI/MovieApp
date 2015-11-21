@@ -41,29 +41,29 @@ Meteor.publish('movieSearch', function(query){
 	}
 });
 
-Meteor.publish('movieReleases', function(){
-	var self = this;
+// Meteor.publish('movieReleases', function(){
+// 	var self = this;
 
-	var MovieDB_api_key = '429786154f78086f6eeb4a97262020f5';
+// 	var MovieDB_api_key = '429786154f78086f6eeb4a97262020f5';
 
-	try{
-		var newreleaseUrl = 'http://api.themoviedb.org/3/movie/now_playing?api_key=' + MovieDB_api_key;
-		var response = HTTP.get(newreleaseUrl).data;
+// 	try{
+// 		var newreleaseUrl = 'http://api.themoviedb.org/3/movie/now_playing?api_key=' + MovieDB_api_key;
+// 		var response = HTTP.get(newreleaseUrl).data;
 
-		_.each(response.results, function(result){
-			var doc = {
-				id: result.id,
-				title: result.title,
-				overview: result.overview,
-				poster: result.poster_path,
-				releaseDate: result.release_date
-			};
-			self.added('movies', Random.id(), doc);
-		});
+// 		_.each(response.results, function(result){
+// 			var doc = {
+// 				id: result.id,
+// 				title: result.title,
+// 				overview: result.overview,
+// 				poster: result.poster_path,
+// 				releaseDate: result.release_date
+// 			};
+// 			self.added('movies', Random.id(), doc);
+// 		});
 
-		self.ready();
-	}catch(error){
-		console.log(error);
-	}
-});
+// 		self.ready();
+// 	}catch(error){
+// 		console.log(error);
+// 	}
+// });
 

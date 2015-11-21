@@ -6,7 +6,7 @@ Session.setDefault('searching', false);
 Tracker.autorun(function(){
 	if(Session.get('query')){
 		var searchHandle = Meteor.subscribe('movieSearch', Session.get('query'));
-		var trailer = Meteor.subscribe('trailers', Session.get('id'));
+		// var trailer = Meteor.subscribe('trailers', Session.get('id'));
 		Session.set('searching', !searchHandle.ready());
 	}
 });
@@ -30,7 +30,7 @@ Template.body.events({
 });
 
 
-Template.body.helpers({
+Template.MovieLayout.helpers({
 	movies: function(){
 		return Movies.find();
 	},
