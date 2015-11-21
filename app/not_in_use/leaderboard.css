@@ -1,0 +1,22 @@
+.player-hover{
+	background: #ccc;
+	cursor: pointer;
+}
+.selected{
+	color: #DA5586;
+	font-weight: 900;
+	background: #eee;
+}
+.selected-player{
+	background: #000;
+	color: #FFF;
+	font-size: 17px;
+}
+.high-score{
+	background: #f1c40f;
+}
+.list-group-item > .glyphicon-star{
+	color: #FFF;
+	font-size: 17px;
+	padding-left: 5px;
+}

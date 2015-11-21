@@ -29,5 +29,10 @@ random
 ejson
 spacebars
 check
+<<<<<<< HEAD
 accounts-password
 meteorhacks:kadira
+=======
+kadira:flow-router
+accounts-password
+>>>>>>> b01d2cc7dacaa49a5757e6758e0484c9820607a0
