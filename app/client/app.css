@@ -1,6 +1,9 @@
 body{
 	margin: 20px;
 }
+.home-poster{
+	font-family: 'Noto Sans', sans-serif;
+}
 .center-block {
   display: block;
   margin-left: auto;
@@ -21,8 +24,14 @@ body{
 	float: right;
 	margin-top: 6px;
 	margin-right: 4em;
+	background-color: #5cb85c;
+    border-color: #4cae4c;
 }
-#login-buttons a, .accounts-dialog a{
+#login-buttons a{
+	color: #FFF;
+	text-decoration: none;
+}
+#login-buttons .accounts-dialog a{
 	color: #000;
 }
 #login-dropdown-list{

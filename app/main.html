@@ -1,11 +1,14 @@
 <head>
   <title>MovieApp</title>
+  <link href='https://fonts.googleapis.com/css?family=Noto+Sans' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
   {{> NavBar}}
   {{#if currentUser}}
     {{> MovieLayout}}
+    {{else}}
+      {{> HomePage}}
   {{/if}}  
 </body>
 
@@ -18,10 +21,26 @@
           <img alt="Brand" src="images/logo.jpg" width="40" height="40" class="logo">
         </a>
       </div>
-       <button class="btn btn-success now-showing">Now Showing</button>
+      {{#if currentUser}}
+        <button class="btn btn-success now-showing">Now Showing</button>
+      {{/if}}
         {{> loginButtons}}
     </div>
   </nav>
+</template>
+
+<template name="HomePage">
+  <div class="container-fluid text-center home-poster">
+    <h1>Welcome to Movie App</h1>
+    <div>
+      <img src="images/home.png" alt="home">
+    </div>
+    <br>
+    <p>
+      Sign in or create an account to search
+      for your favorite movie.
+    </p>
+  </div>
 </template>
 
 
