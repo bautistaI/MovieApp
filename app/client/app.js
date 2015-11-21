@@ -39,6 +39,13 @@ Template.MovieLayout.helpers({
 	}
 });
 
+Template.footer.helpers({
+	year: function(){
+		var year = moment().format("YYYY");
+		return year;
+	}
+});
+
 
 
 

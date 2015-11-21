@@ -1,8 +1,16 @@
 body{
 	margin: 20px;
 }
-.home-poster{
+.home-poster .footer{
 	font-family: 'Noto Sans', sans-serif;
+}
+.footer{
+	color: #FFF;
+	line-height: 4;
+}
+.footer a:hover{
+	color: #FFF;
+	text-decoration: underline;
 }
 .center-block {
   display: block;
