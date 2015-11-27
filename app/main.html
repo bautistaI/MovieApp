@@ -7,14 +7,41 @@
   {{> NavBar}}
   {{#if currentUser}}
     {{> MovieLayout}}
+    {{> NewRelease}}
     {{else}}
       {{> HomePage}}
   {{/if}}  
+  {{> footer}}
 </body>
 
+<!-- New Movie Release Template -->
+<template name="NewRelease">
+  <div class="container-fluid text-center new-movies">
+    <h1 class="on-theaters-now">- Now Showing this Week -</h1>    
+    <div class="row">
+      {{#each newReleases}}
+        {{> NewMovies}}
+      {{/each}}
+    </div>
+  </div>
+</template>
+<template name="NewMovies">
+    <div class="col-sm-6 col-md-3">
+      <div class="thumbnail">
+        {{#if poster}}
+          <img src="http://image.tmdb.org/t/p/w500{{poster}}">
+        {{else}}
+          <img src="http://lorempixel.com/500/281">
+        {{/if}} 
+      </div>
+    </div>
+</template>
+<!-- ============================== -->
 
+
+<!-- Navbar template -->
 <template name="NavBar">
-  <nav class="navbar navbar-default">
+  <nav class="navbar navbar-inverse">
     <div class="container-fluid">
       <div class="navbar-header">
         <a class="navbar-brand" href="">
@@ -28,7 +55,10 @@
     </div>
   </nav>
 </template>
+<!-- ============================= -->
 
+
+<!-- Homepage Template -->
 <template name="HomePage">
   <div class="container-fluid text-center home-poster">
     <h1>Welcome to Movie App</h1>
@@ -42,8 +72,10 @@
     </p>
   </div>
 </template>
+<!-- ==================== -->
 
 
+<!-- Movies Search Template -->
 <template name="MovieLayout">
   <div class="container-fluid" id="main">
     <h2>What movie are you looking for?</h2>
@@ -58,14 +90,13 @@
     {{else}}
       <hr>
       {{#each movies}}
-    <div class="movies">
+    <div class="movie-search">
         {{> movie}}
     </div>
       {{/each}}
     {{/if}}
   </div>
 </template>
-
 
 <template name="movie">
     <div class="col-sm-6 col-md-3">
@@ -81,13 +112,15 @@
             <h3 class="title text-center">{{title}}</h3>
             <p class="text-center">Release date: {{releaseDate}}</p>
           </div>
+          <hr>
           <p>{{overview}}</p>
         </div>
       </div>
     </div>
 </template>
+<!-- =================================== -->
 
-
+<!-- Loading gif template -->
 <template name="loading">
   <div class="container text-center">
     <div class="row">
@@ -95,3 +128,13 @@
     </div>
   </div>
 </template>
+<!-- ======================== -->
+
+
+<!-- Footer Template -->
+<template name="footer">
+  <div class="navbar navbar-inverse navbar-fixed-bottom text-center">
+    <small class="footer"><span class="glyphicon glyphicon-copyright-mark footer"></span>{{year}} <a href="http://www.israelbautista.com" target="_blank" class="footer">Israel Bautista</a></small>
+  </div>
+</template>
+<!-- ================== -->

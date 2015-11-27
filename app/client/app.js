@@ -1,4 +1,5 @@
 Movies = new Meteor.Collection('movies');
+NewReleases = new Meteor.Collection('newReleases');
 
 
 Session.setDefault('searching', false);
@@ -6,10 +7,14 @@ Session.setDefault('searching', false);
 Tracker.autorun(function(){
 	if(Session.get('query')){
 		var searchHandle = Meteor.subscribe('movieSearch', Session.get('query'));
-		// var trailer = Meteor.subscribe('trailers', Session.get('id'));
 		Session.set('searching', !searchHandle.ready());
 	}
 });
+
+Tracker.autorun(function(){
+	var searchNewReleases = Meteor.subscribe('movieReleases');
+});
+
 
 Template.body.events({
 	'submit form': function(event, template){
@@ -18,14 +23,28 @@ Template.body.events({
 		console.log('you query for:', query);
 		if(query)
 			Session.set('query', query);
+		$('.movie-search').show();
+		$('.new-movies').hide();
 	},
 	'click #search': function(event){
 		event.preventDefault();
 		$('input[type=text]').val('');
-	},
+	}
+});
+
+
+
+Template.NavBar.events({
 	'click .now-showing': function(event){
 		event.preventDefault();
-		alert('works');
+		$('.new-movies').show();
+		$('.movie-search').hide();
+	}
+});
+
+Template.NewRelease.helpers({
+	newReleases: function(){
+		return NewReleases.find();
 	}
 });
 
@@ -36,6 +55,13 @@ Template.MovieLayout.helpers({
 	},
 	searching: function(){
 		return Session.get('searching');
+	}
+});
+
+Template.footer.helpers({
+	year: function(){
+		var year = moment().format("YYYY");
+		return year;
 	}
 });
 

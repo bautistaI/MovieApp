@@ -1,8 +1,16 @@
 body{
 	margin: 20px;
 }
-.home-poster{
+.home-poster, .footer, .on-theaters-now, .movie-info {
 	font-family: 'Noto Sans', sans-serif;
+}
+.footer{
+	color: #FFF;
+	line-height: 4;
+}
+.footer a:hover{
+	color: #FFF;
+	text-decoration: underline;
 }
 .center-block {
   display: block;
@@ -42,37 +50,22 @@ body{
 	padding: 5px 13px !important;
 }
 .movie-info{
-	background: #ccc;
-	padding: 10px;
 	margin-bottom: 10px;
-}
-.movie-info .title{
-	color: #FFF;
-	text-shadow: 1px 1px 1px #000;
 }
 .movie-info p{
 	font-size: 12px;
 }
-.thumbnail .caption{
-	padding: 0;
-}
 .thumbnail {
 	display: inline-block;
-	background: -webkit-linear-gradient(45deg, #ddd, #FFF);
+	background: #ddd;
 	border: 2px solid #FAFAFA;
 	box-shadow: 0 1px 2px rgba(34, 25, 25, 0.4);
 	margin: 0 2px 15px;
-	padding: 15px;
+	padding: 10px;
 	padding-bottom: 5px;
 }
-/*@media (max-width: 3000px) {
-    #main{
-        min-width: 1640px!important;
-    }
+.new-movies{
+	margin-bottom: 40px;
 }
-@media (max-width: 1670px) {
-    #main{
-        min-width: 1240px!important;
-    }
-}*/
+
 
