@@ -1,0 +1,23 @@
+<!-- New Movie Release Template -->
+<template name="NewRelease">
+  <div class="container-fluid text-center new-movies">
+    <h1 class="on-theaters-now">- Now Showing this Week -</h1>    
+    <div class="row">
+      {{#each newReleases}}
+        {{> NewMovies}}
+      {{/each}}
+    </div>
+  </div>
+</template>
+<template name="NewMovies">
+    <div class="col-sm-6 col-md-3">
+      <div class="thumbnail">
+        {{#if poster}}
+          <img src="http://image.tmdb.org/t/p/w500{{poster}}">
+        {{else}}
+          <img src="http://lorempixel.com/500/281">
+        {{/if}} 
+      </div>
+    </div>
+</template>
+<!-- ============================== -->

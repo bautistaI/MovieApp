@@ -1,7 +1,7 @@
 body{
 	margin: 20px;
 }
-.home-poster, .footer, .on-theaters-now, .movie-info {
+.home-poster, .on-theaters-now, .movie-info {
 	font-family: 'Noto Sans', sans-serif;
 }
 .footer{
