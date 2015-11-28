@@ -4,6 +4,73 @@ body{
 .home-poster, .on-theaters-now, .movie-info {
 	font-family: 'Noto Sans', sans-serif;
 }
+/*==== HOME PAGE ====*/
+.movie-samples{
+	background-color: #2c3e50;
+	padding-top: 20px;
+	margin-top: 30px;
+	margin-bottom: 50px;
+	border-radius: 5px;
+}
+.sample-images a img{
+	 transition: all 0.5s ease;
+	 opacity: 1;
+	 border-radius: 3px;
+	 margin-bottom: 5px;
+	 text-align: center;
+	 border: 2px solid #ecf0f1;
+}
+.sample-images a:hover img{
+	opacity: 0.3;
+	border-radius: 50%;
+}
+.sample-info p{
+	font-family: 'Noto Sans', sans-serif;
+	color: #34495e;
+}
+.sample-info .title{
+	padding: 0;
+}
+.sample-info .title p{
+	color: #FFF;
+}
+.sample-info .director{
+	padding: 0;
+}
+.sample-info .director p{
+	color: #7f8c8d;
+}
+.sample-info .resolution-1080, .resolution-720, .resolution-sd{
+	padding: 0;
+}
+.sample-info .resolution-1080 p, .resolution-720 p, .resolution-sd p{
+	color: #FFF;
+	padding: 3px 5px;
+	border-radius: 3px;
+}
+.sample-info .resolution-1080 p{
+	background: #f39c12;
+}
+.sample-info .resolution-720 p{
+	background: #3498db;
+}
+.sample-info .resolution-sd p{
+	background: #e74c3c;
+}
+.app-details span{
+	font-size: 40px;
+	color: #7f8c8d;
+}
+.app-details .description{
+	font-size: 30px;
+	color: #2c3e50;
+}
+.app-details p{
+	font-size: 16px;
+	font-family: 'Noto Sans', sans-serif;
+	color: #7f8c8d;
+}
+/*===================*/
 .footer{
 	color: #FFF;
 	line-height: 4;
