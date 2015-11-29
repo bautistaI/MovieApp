@@ -1,0 +1,115 @@
+<template name="HomePage">
+  <div class="page-header text-center">
+    <h1>Welcome to Movie App</h1>
+    <p>
+      This is your destination to find information about new Movie releases,
+      or find your favorite flicks with a quick search!
+    </p>
+    <h2><strong>Sign in for Free and find your next movie adventure!</strong></h2>
+  </div>
+  <div class="container-fluid movie-samples">
+    <div class="row">
+        <div class="col-xs-6 col-md-3 sample-images text-center">
+          <a href="#"><img src="http://lorempixel.com/215/300/fashion"></a>
+          <div class="row">
+            <div class="col-md-12 sample-info">
+              <div class="col-md-6 title">
+                <p><strong>The Flames</strong></p>
+              </div>
+              <div class="col-md-3 resolution-1080 text-center">
+                <p>1080p</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-6 col-md-3 sample-images text-center">
+          <a href="#"><img src="http://lorempixel.com/215/300/sports"></a>
+          <div class="row">
+            <div class="col-md-12 sample-info">
+              <div class="col-md-6 title">
+                <p><strong>For the Fame</strong></p>
+              </div>
+              <div class="col-md-3 resolution-720 text-center">
+                <p>720p</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="clearfix visible-xs"></div>
+
+        <div class="col-xs-6 col-md-3 sample-images text-center">
+          <a href="#"><img src="http://lorempixel.com/215/300/people"></a>
+          <div class="row">
+            <div class="col-md-12 sample-info">
+              <div class="col-md-6 title">
+                <p><strong>Humanity</strong></p>
+              </div>
+              <div class="col-md-3 resolution-sd text-center">
+                <p>SD</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-xs-6 col-md-3 sample-images text-center no-padding">
+          <a href="#"><img src="http://lorempixel.com/215/300/technics"></a>
+          <div class="row">
+            <div class="col-md-12 sample-info">
+              <div class="col-md-6 title">
+                <p><strong>The Future</strong></p>
+              </div>
+              <div class="col-md-3 resolution-1080 text-center">
+                <p>1080p</p>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>    
+  </div>
+
+  <div class="container-fluid">
+    <div class="row app-details">
+        <div class="col-md-4 text-center stars">
+            <span class="glyphicon glyphicon-search"></span>
+            <hr>
+            <p class="description">Search Movies</p>
+            <p>
+              Search thousands of films from the Movieapp thanks to the <a href="https://www.themoviedb.org/?language=en" target="_blank">The Moviedb</a>
+            </p>
+            <hr>
+            <button class="btn btn-lg btn-info">Read more...</button>
+        </div>
+        <div class="col-md-4 text-center">
+           <span class="glyphicon glyphicon-star-empty"></span>
+            <hr>
+            <p class="description">Movie Stars</p>
+            <p>
+              Get a list of the movie cast, release date and overview of your favorite flick
+            </p>
+            <hr>
+            <button class="btn btn-lg btn-info">Read more...</button>
+        </div>
+        <div class="col-md-4 text-center">
+           <span class="glyphicon glyphicon-bullhorn"></span>
+            <hr>
+            <p class="description">New Releases</p>
+            <p>
+              Find which movies are getting release this week or are about to be release!
+            </p>
+            <hr>
+            <button class="btn btn-lg btn-info">Read more...</button>
+        </div>
+     </div>
+   </div>
+  
+  <div class="container-fluid">
+    <div class="row">
+      <h1 class="chart-title text-center">Weekend Box Office Winners</h1>
+      {{> charts}}
+    </div>
+  </div>
+</template>
+
+

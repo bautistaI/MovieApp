@@ -1,0 +1,17 @@
+<!-- Navbar template -->
+<template name="NavBar">
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="">
+          <img alt="Brand" src="images/logo.jpg" width="40" height="40" class="logo">
+        </a>
+      </div>
+      {{#if currentUser}}
+        <button class="btn btn-success now-showing">Now Showing</button>
+      {{/if}}
+        {{> loginButtons}}
+    </div>
+  </nav>
+</template>
+<!-- ============================= -->
