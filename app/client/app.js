@@ -67,4 +67,3 @@ Template.footer.helpers({
 
 
 
-
