@@ -12,11 +12,13 @@
       {{> loading}}
     {{else}}
       <hr>
-      {{#each movies}}
-    <div class="movie-search">
-        {{> movie}}
-    </div>
-      {{/each}}
+      <div class="grid js-masonry">
+        {{#each movies}}
+          <div class="grid-item movie-search">
+              {{> movie}}
+          </div>
+        {{/each}}
+      </div>
     {{/if}}
   </div>
 </template>
