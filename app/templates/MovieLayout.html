@@ -12,23 +12,40 @@
       {{> loading}}
     {{else}}
       <hr>
-      <div class="grid js-masonry">
-        {{#each movies}}
-          <div class="grid-item movie-search">
-              {{> movie}}
-          </div>
-        {{/each}}
-      </div>
+        <div class="grid">
+          {{#each movies}}
+            {{> movie}}
+          {{/each}}  
+        </div>
     {{/if}}
   </div>
 </template>
 
 <template name="movie">
-    <div class="col-sm-6 col-md-3">
+    <div class="grid-item">
       <div class="thumbnail">
         {{#if poster}}
           <img src="http://image.tmdb.org/t/p/w500{{poster}}">
-          <!-- <a href="http://api.themoviedb.org/3/movie/{{key}}/videos" target="_blank">trailer</a> -->
+        {{else}}
+          <img src="http://lorempixel.com/500/281">
+        {{/if}} 
+        <!-- <div class="caption">
+          <div class="movie-info">
+            <h3 class="title text-center">{{title}}</h3>
+            <p class="text-center">Release date: {{releaseDate}}</p>
+          </div>
+          <hr>
+          <p>{{overview}}</p>
+        </div> -->
+      </div>
+    </div>
+</template>
+
+<!-- <template name="movie">
+    <div class="col-sm-3 col-md-3 grid-item pull-left">
+      <div class="thumbnail">
+        {{#if poster}}
+          <img src="http://image.tmdb.org/t/p/w500{{poster}}">
         {{else}}
           <img src="http://lorempixel.com/500/281">
         {{/if}} 
@@ -42,5 +59,5 @@
         </div>
       </div>
     </div>
-</template>
+</template> -->
 <!-- =================================== -->

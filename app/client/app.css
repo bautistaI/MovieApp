@@ -133,10 +133,19 @@ span.ct-label{
 	font-size: 12px;
 }
 /*======= MOVIE LAYOUT =========*/
-/*.grid-item { width: 1200px; }
-.grid-item--width2 { width: 400px; }*/
-
-
+.grid {
+  max-width: 100%;
+}
+.grid:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+.grid-item {
+  width: 460px;
+  height: 200px;
+  float: left;
+}
 .thumbnail {
 	display: inline-block;
 	background: #ddd;
@@ -145,6 +154,7 @@ span.ct-label{
 	margin: 0 2px 15px;
 	padding: 10px;
 	padding-bottom: 5px;
+	min-height: 200px;
 }
 .new-movies{
 	margin-bottom: 40px;
