@@ -1,16 +1,16 @@
 <!-- New Movie Release Template -->
 <template name="NewRelease">
-  <div class="container-fluid text-center new-movies">
-    <h1 class="on-theaters-now">- Now Showing this Week -</h1>    
-    <div class="row">
-      {{#each newReleases}}
-        {{> NewMovies}}
-      {{/each}}
+    <div class="container-fluid text-center new-movies">
+      <h1 class="on-theaters-now">- Now Showing this Week -</h1>    
+      <div class="grid new-movies">
+        {{#each newReleases}}
+          {{> NewMovies}}
+        {{/each}}
+      </div>
     </div>
-  </div>
 </template>
 <template name="NewMovies">
-    <div class="col-sm-6 col-md-3">
+    <div class="row grid-item">
       <div class="thumbnail">
         {{#if poster}}
           <img src="http://image.tmdb.org/t/p/w500{{poster}}">

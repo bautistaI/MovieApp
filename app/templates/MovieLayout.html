@@ -1,28 +1,28 @@
 <!-- Movies Search Template -->
 <template name="MovieLayout">
   <div class="container-fluid" id="main">
-    <h2>What movie are you looking for?</h2>
-    <form class="form-inline search-movie">
-      <div class="form-group">
-        <input class="form-control" type="text" name="query" id="search" size="50" placeholder="(e.g. Fight Club, Starwars)">
-        <input class="btn btn-primary" type="submit" value="Search">
-      </div>
-    </form>    
+      <h2>What movie are you looking for?</h2>
+      <form class="form-inline search-movie">
+        <div class="form-group">
+          <input class="form-control" type="text" name="query" id="search" size="50" placeholder="(e.g. Fight Club, Starwars)">
+          <input class="btn btn-primary" type="submit" value="Search">
+        </div>
+      </form>
     {{#if searching}}
       {{> loading}}
     {{else}}
       <hr>
-        <div class="grid">
-          {{#each movies}}
-            {{> movie}}
-          {{/each}}  
+        <div class="grid movie-search">
+            {{#each movies}}
+              {{> movie}}
+            {{/each}}
         </div>
     {{/if}}
   </div>
 </template>
 
 <template name="movie">
-    <div class="grid-item">
+    <div class="row grid-item">
       <div class="thumbnail">
         {{#if poster}}
           <img src="http://image.tmdb.org/t/p/w500{{poster}}">
@@ -60,4 +60,3 @@
       </div>
     </div>
 </template> -->
-<!-- =================================== -->

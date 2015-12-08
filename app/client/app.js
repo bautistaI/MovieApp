@@ -16,15 +16,16 @@ Tracker.autorun(function(){
 });
 
 
+// ============== REACTIVE BEHAVIOR FOR SEARCHING MOVIES ===========
 Template.body.events({
 	'submit form': function(event, template){
 		event.preventDefault();
 		var query = template.$('input[type=text]').val();
-		console.log('you query for:', query);
+		// console.log('you query for:', query);
 		if(query)
 			Session.set('query', query);
-		$('.movie-search').show();
-		$('.new-movies').hide();
+		$(".new-movies").fadeOut();
+		$(".movie-search").fadeIn();
 	},
 	'click #search': function(event){
 		event.preventDefault();
@@ -32,13 +33,12 @@ Template.body.events({
 	}
 });
 
-
-
+// ============ REACTIVE BEHAVIOR FOR NEW MOVIES ==========
 Template.NavBar.events({
 	'click .now-showing': function(event){
 		event.preventDefault();
-		$('.new-movies').show();
-		$('.movie-search').hide();
+		$(".new-movies").fadeIn();
+		$(".movie-search").fadeOut();
 	}
 });
 
