@@ -55,6 +55,9 @@ Template.MovieLayout.helpers({
 	},
 	searching: function(){
 		return Session.get('searching');
+	},
+	overview: function(){
+		return Movies.findOne();
 	}
 });
 

@@ -36,9 +36,24 @@
             <p class="text-center">Release date: {{releaseDate}}</p>
           </div>
           <hr>
-          <p>{{overview}}</p>
+          <!-- Small modal -->
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-sm">Overview</button>
+
+          <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+            <div class="modal-dialog modal-sm">
+              <div class="modal-content">
+                <div class="modal-header">
+                   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                </div>
+                <h4 class="modal-title" id="myModalLabel">Overview</h4>
+                <div class="modal-body">
+                  <p>{{overview}}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- <p>{{overview}}</p> -->
         </div>
       </div>
     </div>
 </template>
-<!-- =================================== -->
